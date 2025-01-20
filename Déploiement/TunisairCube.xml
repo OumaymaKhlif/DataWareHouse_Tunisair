@@ -1,0 +1,64 @@
+<Schema name="TunisairCube">
+  <Cube name="Tunisair_Cube" visible="true" cache="true" enabled="true">
+    <Table name="tunisair_fact">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="ID_FlightType" highCardinality="false" name="Flight_Type">
+      <Hierarchy name="Flight_Type" visible="true" hasAll="true" primaryKey="ID_FlightType">
+        <Table name="type_vols">
+        </Table>
+        <Level name="ID_FlightType" visible="true" table="type_vols" column="ID_FlightType" nameColumn="ID_FlightType" type="Integer" internalType="int" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Flight_Type" visible="true" table="type_vols" column="Flight_Type" nameColumn="Flight_Type" type="String" internalType="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Flight_status" visible="true" table="type_vols" column="Flight_status" nameColumn="Flight_status" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Scheduled_Departure" visible="true" table="type_vols" column="Scheduled_Departure" nameColumn="Scheduled_Departure" type="Time" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Scheduled_Arrival" visible="true" table="type_vols" column="Scheduled_Arrival" nameColumn="Scheduled_Arrival" type="Time" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="New Level 5" visible="true" table="type_vols" column="Delay_Reason" nameColumn="Delay_Reason" type="String" internalType="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="Arrival_Station" highCardinality="false" name="Airport">
+      <Hierarchy name="Airport" visible="true" hasAll="true" primaryKey="Code">
+        <Table name="airports">
+        </Table>
+        <Level name="Code" visible="true" table="airports" column="Code" nameColumn="Code" type="String" internalType="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Airport_Name" visible="true" table="airports" column="Airport_Name" nameColumn="Airport_Name" type="String" internalType="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Airport_country" visible="true" table="airports" column="Airport_country" nameColumn="Airport_country" type="String" internalType="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="Date" highCardinality="false" name="Date">
+      <Hierarchy name="Date" visible="true" hasAll="true" primaryKey="Date">
+        <Table name="date">
+        </Table>
+        <Level name="day" visible="true" table="date" column="day" nameColumn="day" type="Integer" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+        <Level name="month" visible="true" table="date" column="month" nameColumn="month" type="Integer" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="year" visible="true" table="date" column="year" nameColumn="year" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Date" visible="true" table="date" column="Date" nameColumn="Date" type="Date" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Delay_Minute" column="Delay_Minute" datatype="Numeric" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="Revenue_Total" column="Revenue_Total" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Passengers_Number_economy" column="Passengers_Number_economy" datatype="Numeric" aggregator="distinct-count" visible="true">
+    </Measure>
+    <Measure name="Passengers_Number_PREMeconomy" column="Passengers_Number_PREMeconomy" datatype="Numeric" aggregator="distinct-count" visible="true">
+    </Measure>
+    <Measure name="Passengers_Number_Business" column="Passengers_Number_Business" datatype="Numeric" aggregator="distinct-count" visible="true">
+    </Measure>
+    <Measure name="Passengers_Number_FirstClass" column="Passengers_Number_FirstClass" datatype="Numeric" aggregator="distinct-count" visible="true">
+    </Measure>
+    <Measure name="Arrival_Station" column="Arrival_Station" datatype="String" aggregator="count" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
