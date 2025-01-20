@@ -70,8 +70,8 @@ Le projet fournit des informations exploitables sur :
 - Amélioration des capacités de traitement en temps réel.
 - Exploration de modèles d'apprentissage automatique pour l'analyse prédictive.
 
-## ⚠️ Important Note
-The data used in this project does not come from real sources. It was generated using an API and enriched with fictitious data for academic purposes. This project is purely educational and does not reflect the actual performance of Tunisair.
+## ⚠️ Note importante
+Les données utilisées dans ce projet ne proviennent pas de sources réelles. Elles ont été générées à l'aide d'une API et enrichies de données fictives à des fins académiques. Ce projet est purement pédagogique et ne reflète pas les performances réelles de Tunisair.
 
 ## 📞 Contact 
 Pour toute information complémentaire, veuillez contacter l'équipe projet.
