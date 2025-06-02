@@ -73,9 +73,4 @@ Le projet fournit des informations exploitables sur :
 ## ⚠️ Note importante
 Les données utilisées dans ce projet ne proviennent pas de sources réelles. Elles ont été générées à l'aide d'une API et enrichies de données fictives à des fins académiques. Ce projet est purement pédagogique et ne reflète pas les performances réelles de Tunisair.
 
-## 📞 Contact 
-Pour toute information complémentaire, veuillez contacter l'équipe projet.
-
----
-
 
